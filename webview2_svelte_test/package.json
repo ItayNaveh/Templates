@@ -1,0 +1,22 @@
+{
+  "name": "webview2_svelte_test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "rollup -c",
+    "dev": "concurrently \"rollup -c -w\" \"serve target/debug/client --cors\""
+  },
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^19.0.0",
+    "@rollup/plugin-node-resolve": "^13.0.0",
+    "concurrently": "^6.2.0",
+    "rollup": "^2.52.1",
+    "svelte": "^3.38.2"
+  },
+  "dependencies": {
+    "rollup-plugin-svelte": "^7.1.0"
+  }
+}
