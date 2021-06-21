@@ -1,0 +1,9 @@
+{
+	"compilerOptions": {
+		"target": "ESNext",
+
+		"importsNotUsedAsValues": "error",
+		"types": ["svelte"],
+		"strict": true,
+	},
+}

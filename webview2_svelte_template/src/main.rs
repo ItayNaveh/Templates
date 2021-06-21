@@ -117,21 +117,27 @@ impl App {
 			<html>
 				<head>
 					<script type="module" src="http://localhost:5000/bundle.js"></script>
+					<link rel="stylesheet" href="http://localhost:5000/bundle.css" />
 				</head>
 				<body></body>
 			</html>
 		"#).unwrap();
 
 		#[cfg(not(debug_assertions))]
-		webview.navigate_to_string(&format!(r#"
-			<!DOCTYPE html>
-			<html>
-				<head>
-					<script type="module">{}</script>
-				</head>
-				<body></body>
-			</html>
-		"#, include_str!("../target/release/client/bundle.js"))).unwrap();
+		webview.navigate_to_string(&format!(
+			r#"
+				<!DOCTYPE html>
+				<html>
+					<head>
+						<script type="module">{}</script>
+						<style>{}</style>
+					</head>
+					<body></body>
+				</html>
+			"#,
+			include_str!("../target/release/client/bundle.js"),
+			include_str!("../target/release/client/bundle.css")
+		)).unwrap();
 		
 		// webview.navigate_to_string(include_str!("../target/page.html")).unwrap();
 		
